@@ -1,18 +1,40 @@
-﻿using PartiuAcademia.Core.Entities;
+﻿using Ninject;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Entities;
+using PartiuAcademia.Core.Repository.Abstract;
 using System.Linq;
 
 namespace PartiuAcademia.Core.Business.Concrete
 {
-    public interface IBusiness<T> where T : EntityBase
+    public class BaseBusiness<T> : IBusiness<T> where T : Entities.EntityBase
     {
-        IQueryable<T> Query { get; }
+        [Inject]
+        public IRepository<T> Repository { get; set; }
 
-        void Delete(string id);
 
-        void Insert(T entidade);
+        public virtual IQueryable<T> Query
+        {
+            get { return Repository.Query; }
+        }
 
-        void Update(T entidade);
+        public virtual void Delete(string id)
+        {
+            Repository.Delete(id);
+        }
 
-        T GetById(string id);
+        public virtual void Insert(T entidade)
+        {
+            Repository.Insert(entidade);
+        }
+
+        public virtual void Update(T entidade)
+        {
+            Repository.Update(entidade);
+        }
+
+        public virtual T GetById(string id)
+        {
+            return Repository.GetById(id);
+        }
     }
 }

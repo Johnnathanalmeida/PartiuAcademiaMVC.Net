@@ -232,6 +232,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="InfraStructure\CustomActionResult\" />
+    <Folder Include="InfraStructure\DependencyResolver\" />
+    <Folder Include="InfraStructure\FilterProvider\" />
+    <Folder Include="InfraStructure\Filters\" />
+    <Folder Include="InfraStructure\Helpers\" />
+    <Folder Include="InfraStructure\Provider\Abstract\" />
+    <Folder Include="InfraStructure\Provider\Concrete\" />
+    <Folder Include="InfraStructure\Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -239,6 +247,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartiuAcademia.Core\PartiuAcademia.Core.csproj">
+      <Project>{d3443762-d521-4298-8cbd-73adf4c61e4b}</Project>
+      <Name>PartiuAcademia.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
