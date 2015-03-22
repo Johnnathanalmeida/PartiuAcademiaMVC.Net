@@ -164,7 +164,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="InfraStructure\Provider\Concrete\p.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -239,6 +238,8 @@
     <Folder Include="InfraStructure\Filters\" />
     <Folder Include="InfraStructure\Helpers\" />
     <Folder Include="InfraStructure\Provider\Abstract\" />
+    <Folder Include="InfraStructure\Provider\Concrete\" />
+    <Folder Include="InfraStructure\Teste\" />
     <Folder Include="InfraStructure\Utils\" />
   </ItemGroup>
   <ItemGroup>
