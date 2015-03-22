@@ -239,7 +239,6 @@
     <Folder Include="InfraStructure\Helpers\" />
     <Folder Include="InfraStructure\Provider\Abstract\" />
     <Folder Include="InfraStructure\Provider\Concrete\" />
-    <Folder Include="InfraStructure\Teste\" />
     <Folder Include="InfraStructure\Utils\" />
   </ItemGroup>
   <ItemGroup>
