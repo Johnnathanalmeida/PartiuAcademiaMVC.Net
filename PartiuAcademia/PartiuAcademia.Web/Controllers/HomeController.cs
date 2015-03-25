@@ -13,6 +13,14 @@ namespace PartiuAcademia.Web.Controllers
             return View();
         }
 
+        public ActionResult IndexTemplate() {
+            return View();
+        }
+
+        public ActionResult Academias() {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

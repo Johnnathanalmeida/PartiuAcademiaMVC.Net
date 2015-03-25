@@ -19,5 +19,6 @@ namespace PartiuAcademia.Core.Entities
 
         [Required]
         public string TerminationUser { get; set; }
+
     }
 }
