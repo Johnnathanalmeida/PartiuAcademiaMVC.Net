@@ -11,38 +11,38 @@ using System.Web.Security;
 
 namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
 {
-    public class AutenticacaoProvider : IAutenticacaoProvider
+    public class AuthenticationProvider : IAuthenticationProvider
     {
         [Inject]
         public IUserBusiness UserBusiness { get; set; }
 
         [Inject]
-        public AutenticacaoModel AutenticacaoModel { get; set; }
+        public LoginViewModel AuthenticationModel { get; set; }
 
 
-        public bool Login(Core.DTO.AutenticacaoModel autenticacaoModel, out string msgErr)
+        public bool Login(Core.DTO.LoginViewModel AuthenticationModel, out string msgErr)
         {
             msgErr = string.Empty;
 
-            var usuario = UserBusiness.Query.FirstOrDefault(c => c.Email == autenticacaoModel.Email);
+            var usuario = UserBusiness.Query.FirstOrDefault(c => c.Email == AuthenticationModel.Email);
 
-            if (usuario == null || usuario.Password != autenticacaoModel.Password)
+            if (usuario == null || usuario.Password != AuthenticationModel.Password)
             {
                 msgErr = "Login ou senha incorretos";
                 return false;
             }
 
-            autenticacaoModel.Name = usuario.Name;
-            autenticacaoModel.Id = usuario.Id;
+            AuthenticationModel.Name = usuario.Name;
+            AuthenticationModel.Id = usuario.Id;
 
-            GerarTicketEArmazenarComoCookie(autenticacaoModel);
+            GerarTicketEArmazenarComoCookie(AuthenticationModel);
 
             return true;
         }
 
-        private void GerarTicketEArmazenarComoCookie(Core.DTO.AutenticacaoModel autenticacaoModel, int expiracaoEmMinutos = 180)
+        private void GerarTicketEArmazenarComoCookie(Core.DTO.LoginViewModel AuthenticationModel, int expiracaoEmMinutos = 180)
         {
-            var ticketEncriptado = setTicketEncrypted(autenticacaoModel, expiracaoEmMinutos);
+            var ticketEncriptado = setTicketEncrypted(AuthenticationModel, expiracaoEmMinutos);
 
             var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, ticketEncriptado);
 
@@ -63,7 +63,7 @@ namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
             get { return HttpContext.Current.User.Identity.IsAuthenticated; }
         }
 
-        public Core.DTO.AutenticacaoModel UserAuthenticated
+        public Core.DTO.LoginViewModel UserAuthenticated
         {
             get
             {
@@ -73,18 +73,18 @@ namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
 
                     var ticket = identity.Ticket;
 
-                    AutenticacaoModel = Serializador.DeserializarAutenticacaoModel(ticket.UserData);
+                    AuthenticationModel = Serializador.DeserializarAutenticacaoModel(ticket.UserData);
 
-                    return AutenticacaoModel;
+                    return AuthenticationModel;
                 }
                 return null;
             }
         }
 
-        public string setTicketEncrypted(Core.DTO.AutenticacaoModel autenticacaoModel, int expiracaoEmMinuto = 180)
+        public string setTicketEncrypted(Core.DTO.LoginViewModel AuthenticationModel, int expiracaoEmMinuto = 180)
         {
-            var autenticacaoModelSerializado = Serializador.SerializarAutenticacaoModel(autenticacaoModel);
-            var ticket = new FormsAuthenticationTicket(1, autenticacaoModel.Email,
+            var autenticacaoModelSerializado = Serializador.SerializarAutenticacaoModel(AuthenticationModel);
+            var ticket = new FormsAuthenticationTicket(1, AuthenticationModel.Email,
                 DateTime.Now, DateTime.Now.AddMinutes(expiracaoEmMinuto), false, autenticacaoModelSerializado,
                 FormsAuthentication.FormsCookiePath);
             var ticketEncriptado = FormsAuthentication.Encrypt(ticket);

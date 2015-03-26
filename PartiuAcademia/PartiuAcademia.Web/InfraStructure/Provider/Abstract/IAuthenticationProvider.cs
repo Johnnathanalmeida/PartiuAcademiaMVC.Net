@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace PartiuAcademia.Web.InfraStructure.Provider.Abstract
 {
-    public interface IAutenticacaoProvider
+    public interface IAuthenticationProvider
     {
-        bool Login(AutenticacaoModel autenticacaoModel, out string msgErr);
+        bool Login(LoginViewModel AuthenticationModel, out string msgErr);
 
         void Logout();
 
         bool Authenticated { get; }
-        AutenticacaoModel UserAuthenticated { get; }
+        LoginViewModel UserAuthenticated { get; }
 
-        string setTicketEncrypted(AutenticacaoModel autenticacaoModel, int expiracaoEmMinuto = 180);
+        string setTicketEncrypted(LoginViewModel AuthenticationModel, int expiracaoEmMinuto = 180);
+
     }
 }

@@ -32,7 +32,7 @@ namespace PartiuAcademia.Web.InfraStructure.DependencyResolver
 
         private void AddBindings()
         {
-            Kernel.Bind<IAutenticacaoProvider>().To<AutenticacaoProvider>();
+            Kernel.Bind<IAuthenticationProvider>().To<AuthenticationProvider>();
         }
     }
 }

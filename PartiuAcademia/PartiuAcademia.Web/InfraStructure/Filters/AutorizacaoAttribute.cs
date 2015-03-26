@@ -13,7 +13,7 @@ namespace PartiuAcademia.Web.InfraStructure.Filters
     public class AutorizacaoAttribute : AuthorizeAttribute
     {
         [Inject]
-        public IAutenticacaoProvider AutenticacaoProvider { get; set; }
+        public IAuthenticationProvider AuthenticationProvider { get; set; }
 
         private string msgErro;
 
@@ -23,7 +23,7 @@ namespace PartiuAcademia.Web.InfraStructure.Filters
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            if (!AutenticacaoProvider.Authenticated)
+            if (!AuthenticationProvider.Authenticated)
             {
                 msgErro = "Você precisa se autenticar para acessar essa página";
                 return false;

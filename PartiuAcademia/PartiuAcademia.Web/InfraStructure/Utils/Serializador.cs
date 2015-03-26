@@ -11,21 +11,21 @@ namespace PartiuAcademia.Web.InfraStructure.Utils
 {
     public class Serializador
     {
-        public static string SerializarAutenticacaoModel(AutenticacaoModel autenticacaoModel)
+        public static string SerializarAutenticacaoModel(LoginViewModel AuthenticationModel)
         {
-            var serializer = new XmlSerializer(typeof(AutenticacaoModel));
+            var serializer = new XmlSerializer(typeof(LoginViewModel));
             var sw = new StringWriter();
             var xw = XmlWriter.Create(sw);
-            serializer.Serialize(xw, autenticacaoModel);
+            serializer.Serialize(xw, AuthenticationModel);
             var autenticacaoModelSerializado = sw.ToString();
             return autenticacaoModelSerializado;
         }
 
-        public static AutenticacaoModel DeserializarAutenticacaoModel(string autenticacaoModelSerializado)
+        public static LoginViewModel DeserializarAutenticacaoModel(string AuthenticationModelSerializado)
         {
-            var serializer = new XmlSerializer(typeof(AutenticacaoModel));
+            var serializer = new XmlSerializer(typeof(LoginViewModel));
             var autenticacaoModel =
-                (AutenticacaoModel)serializer.Deserialize(new StringReader(autenticacaoModelSerializado));
+                (LoginViewModel)serializer.Deserialize(new StringReader(AuthenticationModelSerializado));
             return autenticacaoModel;
         }
 
