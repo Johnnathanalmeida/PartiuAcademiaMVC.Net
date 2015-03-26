@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PartiuAcademia.Core.Entities
 {
+
+    [Table("tbCity")]
     public class City : EntityBase
     {
         [Required]

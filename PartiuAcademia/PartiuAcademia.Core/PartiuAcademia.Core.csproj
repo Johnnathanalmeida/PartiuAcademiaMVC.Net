@@ -77,13 +77,29 @@
     <Compile Include="Entities\Training.cs" />
     <Compile Include="Entities\TrainingRecord.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Horary.cs" />
+    <Compile Include="Entities\Horary.cs" />
+    <Compile Include="Migrations\201503262348441_tbstate.cs" />
+    <Compile Include="Migrations\201503262348441_tbstate.Designer.cs">
+      <DependentUpon>201503262348441_tbstate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503262356016_db1.cs" />
+    <Compile Include="Migrations\201503262356016_db1.Designer.cs">
+      <DependentUpon>201503262356016_db1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Abstract\IRepository.cs" />
     <Compile Include="Repository\Concrete\BaseRepository.cs" />
     <Compile Include="Repository\Configuration\PartiuAcademiaContext.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503262348441_tbstate.resx">
+      <DependentUpon>201503262348441_tbstate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503262356016_db1.resx">
+      <DependentUpon>201503262356016_db1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

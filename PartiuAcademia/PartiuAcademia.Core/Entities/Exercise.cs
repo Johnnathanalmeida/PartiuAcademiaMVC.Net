@@ -7,10 +7,18 @@ using System.Threading.Tasks;
 
 namespace PartiuAcademia.Core.Entities
 {
-    [Table("tbCategory")]
-    public class Category : EntityBase
+    [Table("tbExercise")]
+    public class Exercise : EntityBase
     {
         public string Name { get; set; }
 
+        public int Series { get; set; }
+
+        public int Repety { get; set; }
+
+        public int Carga { get; set; }
+
+        public Category Category { get; set; }
+                
     }
 }
