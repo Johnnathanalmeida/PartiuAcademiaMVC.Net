@@ -45,6 +45,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,8 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Abstract\IBusiness.cs" />
+    <Compile Include="Business\Abstract\IUserBusiness.cs" />
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
+    <Compile Include="Business\Concrete\UserBusiness.cs" />
     <Compile Include="DI\PartiuAcademiaNinjectModule.cs" />
+    <Compile Include="DTO\AutenticacaoModel.cs" />
+    <Compile Include="DTO\ResultSimpleDTO.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\City.cs" />
@@ -78,9 +83,7 @@
     <Compile Include="Repository\Concrete\BaseRepository.cs" />
     <Compile Include="Repository\Configuration\PartiuAcademiaContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

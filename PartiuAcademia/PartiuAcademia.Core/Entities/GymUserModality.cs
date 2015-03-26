@@ -16,7 +16,7 @@ namespace PartiuAcademia.Core.Entities
 
         public Modality Modality { get; set; }
 
-        public IList<TrainingRecord>? TrainingRecord { get; set; }
+        public IList<TrainingRecord> TrainingRecord { get; set; }
         
     }
 }

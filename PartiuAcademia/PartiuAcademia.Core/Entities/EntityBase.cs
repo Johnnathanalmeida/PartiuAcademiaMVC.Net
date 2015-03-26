@@ -6,7 +6,7 @@ namespace PartiuAcademia.Core.Entities
     public class EntityBase
     {
         [Key]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         public DateTime CreationDate { get; set; }

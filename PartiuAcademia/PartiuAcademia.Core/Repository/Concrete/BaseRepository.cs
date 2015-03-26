@@ -25,9 +25,9 @@ namespace PartiuAcademia.Core.Repository.Concrete
            }            
         }        
         
-        public void Delete(string id)
+        public void Delete(string Id)
         {
-            var entity = Query.First(c => c.id == id);
+            var entity = Query.First(c => c.Id == Id);
             Context.Entry(entity).State = EntityState.Deleted;
             Context.SaveChanges();
         }
@@ -45,9 +45,9 @@ namespace PartiuAcademia.Core.Repository.Concrete
             Context.SaveChanges();
         }
 
-        public T GetById(string id)
+        public T GetById(string Id)
         {
-            return Query.FirstOrDefault(c => c.id == id);
+            return Query.FirstOrDefault(c => c.Id == Id);
         }
     }
 }

@@ -17,10 +17,20 @@ namespace PartiuAcademia.Web.Controllers
             return View();
         }
 
-        public ActionResult Academias() {
+        public ActionResult Gym() {
             return View();
         }
 
+        public ActionResult Modality()
+        {
+            return View();
+        }
+
+        public ActionResult Promotion()
+        {
+            return View();
+        }
+                
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

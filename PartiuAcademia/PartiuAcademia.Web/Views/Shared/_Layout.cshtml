@@ -35,221 +35,94 @@
     <script src="~/Scripts/Ace/respond.js"></script>
     <![endif]-->
 
-
 </head>
 
 <body class="no-skin">
-    <!-- #section:basics/navbar.layout -->
+
+    @*<div id="navbar" class="navbar navbar-default">*@
     <div id="navbar" class="navbar navbar-default">
         <script type="text/javascript">
             try { ace.settings.check('navbar', 'fixed') } catch (e) { }
         </script>
 
         <div class="navbar-container" id="navbar-container">
-            
-
-            <!-- /section:basics/sidebar.mobile.toggle -->
             <div class="navbar-header pull-left">
-                <!-- #section:basics/navbar.layout.brand -->
-                <a href="#" class="navbar-brand">
+                <a href="/Home" class="navbar-brand">
                     <small>
                         <i class="fa fa-leaf"></i>
-                        Ace Admin
+                        Academia ON
                     </small>
                 </a>
-
-                <!-- /section:basics/navbar.layout.brand -->
-                <!-- #section:basics/navbar.toggle -->
-                <!-- /section:basics/navbar.toggle -->
             </div>
 
-            <!-- #section:basics/sidebar.mobile.toggle -->
-            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-                <span class="sr-only">Toggle sidebar</span>
-
-                <span class="icon-bar"></span>
-
-                <span class="icon-bar"></span>
-
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- #section:basics/sidebar -->
-            <div id="sidebar" class="sidebar                  responsive">
-                <ul class="nav nav-list">
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="menu-icon fa fa-tachometer"></i>
-                            <span class="menu-text"> Dashboard </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Academias", "Gym", "Home")</li>
+                    <li>@Html.ActionLink("Modalidades", "Modality", "Home")</li>
+                    <li>@Html.ActionLink("Promoções", "Promotion", "Home")</li>
+                    <li>@Html.ActionLink("Social", "Index", "Social")</li>
+                    <li>@Html.ActionLink("Sistema", "Index", "System")</li>
                 </ul>
+                @Html.Partial("_LoginPartial")
             </div>
 
-            <!-- #section:basics/navbar.dropdown -->
-            <div class="navbar-buttons navbar-header pull-right" role="navigation">
-                <ul class="nav ace-nav">
-
-                    <!-- #section:basics/navbar.user_menu -->
-                    <li class="light-blue">
-                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="~/Images/Ace/avatars/user.jpg" alt="Jason's Photo" />
-                            <span class="user-info">
-                                <small>Welcome,</small>
-                                Jason
-                            </span>
-
-                            <i class="ace-icon fa fa-caret-down"></i>
-                        </a>
-
-                    </li>
-
-                    <!-- /section:basics/navbar.user_menu -->
-                </ul>
-            </div>
-
-        <!-- /section:basics/navbar.dropdown -->
         </div><!-- /.navbar-container -->
     </div>
-
+    
     <!-- /section:basics/navbar.layout -->
     <div class="main-container" id="main-container">
         <script type="text/javascript">
             try { ace.settings.check('main-container', 'fixed') } catch (e) { }
         </script>
 
-        <!-- /section:basics/sidebar -->
         <div class="main-content">
             <div class="main-content-inner">
-
-                <!-- /section:basics/content.breadcrumbs -->
                 <div class="page-content">
-                    <!-- #section:settings.box -->
-                    <div class="ace-settings-container" id="ace-settings-container">
-                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-                            <i class="ace-icon fa fa-cog bigger-130"></i>
-                        </div>
-
-                        <div class="ace-settings-box clearfix" id="ace-settings-box">
-                            <div class="pull-left width-50">
-                                <!-- #section:settings.skins -->
-                                <div class="ace-settings-item">
-                                    <div class="pull-left">
-                                        <select id="skin-colorpicker" class="hide">
-                                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
-                                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
-                                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
-                                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-                                        </select>
-                                    </div>
-                                    <span>&nbsp; Choose Skin</span>
-                                </div>
-
-                                <!-- /section:settings.skins -->
-                                <!-- #section:settings.navbar -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
-                                    <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-                                </div>
-
-                                <!-- /section:settings.navbar -->
-                                <!-- #section:settings.sidebar -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
-                                    <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-                                </div>
-
-                                <!-- /section:settings.sidebar -->
-                                <!-- #section:settings.breadcrumbs -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
-                                    <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-                                </div>
-
-                                <!-- /section:settings.breadcrumbs -->
-                                <!-- #section:settings.rtl -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
-                                    <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-                                </div>
-
-                                <!-- /section:settings.rtl -->
-                                <!-- #section:settings.container -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
-                                    <label class="lbl" for="ace-settings-add-container">
-                                        Inside
-                                        <b>.container</b>
-                                    </label>
-                                </div>
-
-                                <!-- /section:settings.container -->
-                            </div><!-- /.pull-left -->
-
-                            <div class="pull-left width-50">
-                                <!-- #section:basics/sidebar.options -->
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
-                                    <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
-                                </div>
-
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
-                                    <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
-                                </div>
-
-                                <div class="ace-settings-item">
-                                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
-                                    <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
-                                </div>
-
-                                <!-- /section:basics/sidebar.options -->
-                            </div><!-- /.pull-left -->
-                        </div><!-- /.ace-settings-box -->
-                    </div><!-- /.ace-settings-container -->
-                    <!-- /section:settings.box -->
                     
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- PAGE CONTENT BEGINS -->
+                    @RenderBody()
 
-                            @RenderBody()
-    
-                            <!-- PAGE CONTENT ENDS -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
                 </div><!-- /.page-content -->
             </div>
         </div><!-- /.main-content -->
 
         <div class="footer">
             <div class="footer-inner">
-                <!-- #section:basics/footer -->
                 <div class="footer-content">
-                    <span class="bigger-120">
-                        <span class="blue bolder">Ace</span>
-                        Application &copy; 2015
-                    </span>
 
-                    &nbsp; &nbsp;
-                    <span class="action-buttons">
-                        <a href="#">
-                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                        </a>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <span class="green bolder">@Html.ActionLink("Sobre", "About", "Home")</span>
+                            &nbsp;|&nbsp;
+                            <span class="orange bolder">@Html.ActionLink("Suporte / Contato", "Contact", "Home")</span>
+                            &nbsp;|&nbsp;
+                            <span class="action-buttons">
+                                <a href="#">
+                                    <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+                                </a>
 
-                        <a href="#">
-                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                        </a>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                                </a>
 
-                        <a href="#">
-                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                        </a>
-                    </span>
+                                <a href="#">
+                                    <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                                </a>
+                            </span>
+                        </div>                        
+                        <div class="col-md-6">
+                            <span class="green bolder">Academia ON</span> © Copyright  2015 - <span class="orange bolder">J3</span> Ltda.
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- /section:basics/footer -->
             </div>
         </div>
 
@@ -332,17 +205,6 @@
                     var label = li.find('label.inline').get(0);
                     if (label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation();
                 });
-
-
-            //show the dropdowns on top or bottom depending on window height and menu position
-            $('#task-tab .dropdown-hover').on('mouseenter', function (e) {
-                var offset = $(this).offset();
-
-                var $w = $(window)
-                if (offset.top > $w.scrollTop() + $w.innerHeight() - 100)
-                    $(this).addClass('dropup');
-                else $(this).removeClass('dropup');
-            });
 
         })
     </script>
