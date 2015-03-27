@@ -2,6 +2,8 @@
 using Ninject.Extensions.Conventions;
 using PartiuAcademia.Core.Repository.Abstract;
 using PartiuAcademia.Core.Repository.Concrete;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Business.Concrete;
 
 namespace PartiuAcademia.Core.DI
 {

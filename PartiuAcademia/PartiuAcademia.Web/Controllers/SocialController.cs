@@ -1,4 +1,7 @@
-﻿using PartiuAcademia.Web.InfraStructure.Filters;
+﻿using Ninject;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Entities;
+using PartiuAcademia.Web.InfraStructure.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,7 @@ namespace PartiuAcademia.Web.Controllers
     [Autorizacao]
     public class SocialController : Controller
     {
+        
         // GET: Social
         public ActionResult Index()
         {

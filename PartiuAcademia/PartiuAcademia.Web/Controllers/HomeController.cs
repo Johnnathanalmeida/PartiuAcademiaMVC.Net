@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Ninject;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,7 @@ namespace PartiuAcademia.Web.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
