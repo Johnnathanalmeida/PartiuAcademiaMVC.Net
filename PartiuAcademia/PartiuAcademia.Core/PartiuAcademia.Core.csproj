@@ -54,8 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Abstract\IBusiness.cs" />
+    <Compile Include="Business\Abstract\IStateBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
+    <Compile Include="Business\Concrete\StateBusiness.cs" />
     <Compile Include="Business\Concrete\UserBusiness.cs" />
     <Compile Include="DI\PartiuAcademiaNinjectModule.cs" />
     <Compile Include="DTO\AccountViewModels.cs" />
@@ -78,13 +80,9 @@
     <Compile Include="Entities\TrainingRecord.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Horary.cs" />
-    <Compile Include="Migrations\201503262348441_tbstate.cs" />
-    <Compile Include="Migrations\201503262348441_tbstate.Designer.cs">
-      <DependentUpon>201503262348441_tbstate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503262356016_db1.cs" />
-    <Compile Include="Migrations\201503262356016_db1.Designer.cs">
-      <DependentUpon>201503262356016_db1.cs</DependentUpon>
+    <Compile Include="Migrations\201503272015002_v1db.cs" />
+    <Compile Include="Migrations\201503272015002_v1db.Designer.cs">
+      <DependentUpon>201503272015002_v1db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,16 +91,13 @@
     <Compile Include="Repository\Configuration\PartiuAcademiaContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503262348441_tbstate.resx">
-      <DependentUpon>201503262348441_tbstate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503262356016_db1.resx">
-      <DependentUpon>201503262356016_db1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503272015002_v1db.resx">
+      <DependentUpon>201503272015002_v1db.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
