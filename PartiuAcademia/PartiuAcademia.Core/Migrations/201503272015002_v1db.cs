@@ -3,7 +3,7 @@ namespace PartiuAcademia.Core.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class db1 : DbMigration
+    public partial class v1db : DbMigration
     {
         public override void Up()
         {
@@ -57,6 +57,20 @@ namespace PartiuAcademia.Core.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.tbState", t => t.State_Id, cascadeDelete: true)
                 .Index(t => t.State_Id);
+            
+            CreateTable(
+                "dbo.tbState",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false),
+                        Sigla = c.String(maxLength: 2),
+                        CreationDate = c.DateTime(nullable: false),
+                        CreationUser = c.String(nullable: false),
+                        TerminationDate = c.DateTime(nullable: false),
+                        TerminationUser = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.tbCategory",
@@ -338,6 +352,7 @@ namespace PartiuAcademia.Core.Migrations
             DropTable("dbo.tbFrequency");
             DropTable("dbo.tbExercise");
             DropTable("dbo.tbCategory");
+            DropTable("dbo.tbState");
             DropTable("dbo.tbCity");
             DropTable("dbo.tbDistrict");
             DropTable("dbo.tbAdress");

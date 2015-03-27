@@ -7,13 +7,13 @@ namespace PartiuAcademia.Core.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class db1 : IMigrationMetadata
+    public sealed partial class v1db : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(db1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v1db));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503262356016_db1"; }
+            get { return "201503272015002_v1db"; }
         }
         
         string IMigrationMetadata.Source

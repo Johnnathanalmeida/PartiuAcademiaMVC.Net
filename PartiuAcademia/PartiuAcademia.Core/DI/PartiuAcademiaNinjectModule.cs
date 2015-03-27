@@ -1,5 +1,7 @@
 ﻿using Ninject.Modules;
 using Ninject.Extensions.Conventions;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Business.Concrete;
 using PartiuAcademia.Core.Repository.Abstract;
 using PartiuAcademia.Core.Repository.Concrete;
 using PartiuAcademia.Core.Business.Abstract;
@@ -12,6 +14,8 @@ namespace PartiuAcademia.Core.DI
 
         public override void Load()
         {
+
+            Kernel.Bind(typeof(IStateBusiness)).To(typeof(StateBusiness));
             AddBindingsGenerics();
         }
 
@@ -19,6 +23,9 @@ namespace PartiuAcademia.Core.DI
             Kernel.Bind(c => c.FromThisAssembly()
                     .SelectAllClasses()
                     .BindDefaultInterfaces());
+
+           
+
             Kernel.Bind(typeof(IRepository<>)).To(typeof(BaseRepository<>));
         }
 
