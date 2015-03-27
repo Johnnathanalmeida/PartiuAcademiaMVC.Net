@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PartiuAcademia.Web.InfraStructure.Provider.Abstract
 {
-    public interface IAuthenticationProvider
+    public interface IAutenticacaoProvider
     {
         bool Login(LoginViewModel AuthenticationModel, out string msgErr);
 

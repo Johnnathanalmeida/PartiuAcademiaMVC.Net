@@ -4,8 +4,6 @@ using PartiuAcademia.Web.InfraStructure.Provider.Abstract;
 using PartiuAcademia.Web.InfraStructure.Provider.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PartiuAcademia.Web.InfraStructure.DependencyResolver
@@ -32,7 +30,7 @@ namespace PartiuAcademia.Web.InfraStructure.DependencyResolver
 
         private void AddBindings()
         {
-            Kernel.Bind<IAuthenticationProvider>().To<AuthenticationProvider>();
+            Kernel.Bind<IAutenticacaoProvider>().To<AutenticacaoProvider>();
         }
     }
 }

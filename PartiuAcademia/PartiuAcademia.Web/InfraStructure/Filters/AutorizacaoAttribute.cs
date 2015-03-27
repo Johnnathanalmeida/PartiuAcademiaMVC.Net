@@ -1,19 +1,16 @@
-﻿using System;
-using Ninject;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Ninject;
+using PartiuAcademia.Web.InfraStructure.CustomActionResult;
+using PartiuAcademia.Web.InfraStructure.Provider.Abstract;
 using System.Web;
 using System.Web.Mvc;
-using PartiuAcademia.Web.InfraStructure.Provider.Abstract;
 using System.Web.Security;
-using PartiuAcademia.Web.InfraStructure.CustomActionResult;
 
 namespace PartiuAcademia.Web.InfraStructure.Filters
 {
     public class AutorizacaoAttribute : AuthorizeAttribute
     {
         [Inject]
-        public IAuthenticationProvider AuthenticationProvider { get; set; }
+        public IAutenticacaoProvider AutenticacaoProvider { get; set; }
 
         private string msgErro;
 
@@ -23,7 +20,7 @@ namespace PartiuAcademia.Web.InfraStructure.Filters
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            if (!AuthenticationProvider.Authenticated)
+            if (!AutenticacaoProvider.Authenticated)
             {
                 msgErro = "Você precisa se autenticar para acessar essa página";
                 return false;

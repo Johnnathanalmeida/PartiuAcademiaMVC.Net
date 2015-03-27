@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PartiuAcademia.Web.InfraStructure.DependencyResolver;
+using PartiuAcademia.Web.InfraStructure.FilterProvider;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +15,12 @@ namespace PartiuAcademia.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            DependencyResolver.SetResolver(new NinjectDependencyResolver());
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            FilterProviders.Providers.Clear();
+            FilterProviders.Providers.Add(new FilterProviderCustom());
         }
     }
 }

@@ -4,14 +4,13 @@ using PartiuAcademia.Core.DTO;
 using PartiuAcademia.Web.InfraStructure.Provider.Abstract;
 using PartiuAcademia.Web.InfraStructure.Utils;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 
 namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
 {
-    public class AuthenticationProvider : IAuthenticationProvider
+    public class AutenticacaoProvider : IAutenticacaoProvider
     {
         [Inject]
         public IUserBusiness UserBusiness { get; set; }
@@ -40,9 +39,9 @@ namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
             return true;
         }
 
-        private void GerarTicketEArmazenarComoCookie(Core.DTO.LoginViewModel AuthenticationModel, int expiracaoEmMinutos = 180)
+        private void GerarTicketEArmazenarComoCookie(Core.DTO.LoginViewModel model, int expiracaoEmMinutos = 180)
         {
-            var ticketEncriptado = setTicketEncrypted(AuthenticationModel, expiracaoEmMinutos);
+            var ticketEncriptado = setTicketEncrypted(model, expiracaoEmMinutos);
 
             var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, ticketEncriptado);
 

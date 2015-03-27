@@ -171,8 +171,8 @@
     <Compile Include="InfraStructure\DependencyResolver\NinjectDependencyResolver.cs" />
     <Compile Include="InfraStructure\FilterProvider\FilterProviderCustom.cs" />
     <Compile Include="InfraStructure\Filters\AutorizacaoAttribute.cs" />
-    <Compile Include="InfraStructure\Provider\Abstract\IAuthenticationProvider.cs" />
-    <Compile Include="InfraStructure\Provider\Concrete\AuthenticationProvider.cs" />
+    <Compile Include="InfraStructure\Provider\Abstract\IAutenticacaoProvider.cs" />
+    <Compile Include="InfraStructure\Provider\Concrete\AutenticacaoProvider.cs" />
     <Compile Include="InfraStructure\Utils\Serializador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

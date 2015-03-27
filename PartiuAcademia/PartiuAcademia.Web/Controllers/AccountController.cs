@@ -19,7 +19,7 @@ namespace PartiuAcademia.Web.Controllers
     {
 
         [Inject]
-        public IAuthenticationProvider AuthenticationProvider { get; set; }
+        public IAutenticacaoProvider AuthenticationProvider { get; set; }
             
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)

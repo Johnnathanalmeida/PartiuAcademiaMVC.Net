@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PartiuAcademia.Core.Business.Concrete
 {
-    class UserBusiness : BaseBusiness<User>, IUserBusiness
+    public class UserBusiness : BaseBusiness<User>, IUserBusiness
     {
         public override void Insert(User User)
         {
