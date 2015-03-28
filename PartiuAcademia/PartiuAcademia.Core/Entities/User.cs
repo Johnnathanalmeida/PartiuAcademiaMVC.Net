@@ -30,7 +30,7 @@ namespace PartiuAcademia.Core.Entities
 
         public Role RoleID { get; set; }
 
-        public IList<GymUserModality> lGymUserModality { get; set; }
+        public  virtual IList<GymUserModality> lGymUserModality { get; set; }
                 
     }
 }

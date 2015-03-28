@@ -8,9 +8,7 @@ using PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Core.Business.Concrete
 {
-    public class StateBusiness : BaseBusiness<State> ,IStateBusiness
+    public class StateBusiness : Business<State>, IStateBusiness
     {
-
-
     }
 }

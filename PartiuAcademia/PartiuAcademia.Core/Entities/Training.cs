@@ -11,17 +11,17 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbTraining")]
     public class Training : EntityBase
     {
-        public User Teacher { get; set; }
+        public virtual User Teacher { get; set; }
 
-        public Objetivo Objetivo { get; set; }
-
+        public  Objetivo Objetivo { get; set; }
+        
         public string Observation { get; set; }
 
         public int Duration { get; set; }
 
         public bool Status { get; set; }
 
-        public IList<TrainingRecord> lTrainingRecord { get; set; }
+        public virtual IList<TrainingRecord> lTrainingRecord { get; set; }
 
     }
 }

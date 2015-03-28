@@ -15,10 +15,22 @@ using PartiuAcademia.Core.Repository.Configuration;
 namespace PartiuAcademia.Web.Controllers
 {
 
-    [Autorizacao]
+    
+
+   
     public class SocialController : Controller
     {
-        // GET: Social
+
+        [Inject]
+        public IUserBusiness UserBusiness { get; set; }
+
+
+        [Inject]
+        public IStateBusiness StateBusiness { get; set; }
+
+          
+
+
         public ActionResult Index()
         {
             return View();

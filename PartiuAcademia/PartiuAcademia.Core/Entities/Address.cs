@@ -14,7 +14,9 @@ namespace PartiuAcademia.Core.Entities
 
         public string Complement { get; set; }
         
-        public District District { get; set; }
+        public virtual District District { get; set; }
+
+       
         
     }
 }
