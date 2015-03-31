@@ -14,7 +14,11 @@ namespace PartiuAcademia.Core.Entities
         [Required]
         public string Name { get; set; }
 
-        public City City { get; set; }
+
+
+        public virtual City City { get; set; }
+
+
         
     }
 }

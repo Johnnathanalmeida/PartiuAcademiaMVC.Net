@@ -12,13 +12,20 @@ namespace PartiuAcademia.Core.Entities
     public class GymUserModality : EntityBase
     {
 
-        public Gym Gym { get; set; }
+        public virtual Gym Gym { get; set; }
 
-        public User User { get; set; }
+       
 
-        public Modality Modality { get; set; }
 
-        public IList<TrainingRecord> TrainingRecord { get; set; }
+        public virtual User User { get; set; }
+
+      
+
+        public virtual Modality Modality { get; set; }
+
+
+
+        public  virtual  IList<TrainingRecord> TrainingRecord { get; set; }
         
     }
 }

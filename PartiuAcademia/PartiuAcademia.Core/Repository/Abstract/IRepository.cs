@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Core.Repository.Abstract
 {
-    public interface IRepository<T> where T : Entities.EntityBase
+    public interface IRepository<T> where T : EntityBase
     {
         IQueryable<T> Query { get; }
 

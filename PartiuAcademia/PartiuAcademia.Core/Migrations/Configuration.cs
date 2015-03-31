@@ -5,7 +5,7 @@ namespace PartiuAcademia.Core.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PartiuAcademia.Core.Repository.Configuration.PartiuAcademiaContext>
+    public sealed class Configuration : DbMigrationsConfiguration<PartiuAcademia.Core.Repository.Configuration.PartiuAcademiaContext>
     {
         public Configuration()
         {

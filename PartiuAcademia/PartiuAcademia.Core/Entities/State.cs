@@ -14,7 +14,7 @@ namespace PartiuAcademia.Core.Entities
         [Required]
         public string Name { get; set; }
 
-        [MaxLength(2)]
+        [Required]
         public string Sigla { get; set; }
     }
 }
