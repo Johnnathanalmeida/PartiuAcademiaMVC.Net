@@ -54,9 +54,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Abstract\IBusiness.cs" />
+    <Compile Include="Business\Abstract\ICityBusiness.cs" />
     <Compile Include="Business\Abstract\IStateBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
     <Compile Include="Business\Concrete\Business.cs" />
+    <Compile Include="Business\Concrete\CityBusiness.cs" />
     <Compile Include="Business\Concrete\StateBusiness.cs" />
     <Compile Include="Business\Concrete\UserBusiness.cs" />
     <Compile Include="DI\PartiuAcademiaNinjectModule.cs" />
