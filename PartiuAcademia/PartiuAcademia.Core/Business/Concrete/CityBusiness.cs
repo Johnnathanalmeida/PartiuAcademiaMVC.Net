@@ -32,9 +32,6 @@ namespace PartiuAcademia.Core.Business.Concrete
             base.Update(entidade);
         }
 
-
-
-        
-
+       
     }
 }

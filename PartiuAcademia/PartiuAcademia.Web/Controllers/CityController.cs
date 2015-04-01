@@ -21,24 +21,23 @@ namespace PartiuAcademia.Web.Controllers
         [Inject]
         public PartiuAcademiaContext PartiuAcademiaContext { get; set; }
 
+          
+
 
         public ActionResult Index()
         {
-
-
-
-
-
-
-            return View();
+            var Lcity = PartiuAcademiaContext.City.Include("State").ToList();
+            
+            
+            return View(Lcity);
         }
+
 
 
         public ActionResult Insert()
         {
 
             ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
-
             //ViewBag.Estado = new SelectList(PartiuAcademiaContext.State, "Id", "Name",);
             return View();
         }
@@ -63,6 +62,7 @@ namespace PartiuAcademia.Web.Controllers
 
             catch (InvalidOperationException ex)
             {
+                ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
                 TempData["msgErro"] = ex.Message;
                 return View(city);
             }
@@ -73,7 +73,7 @@ namespace PartiuAcademia.Web.Controllers
 
         public ActionResult Edit(string id)
         {
-
+            ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
             var City = CityBusiness.GetById(id);
             return View(City);
         }
@@ -82,6 +82,8 @@ namespace PartiuAcademia.Web.Controllers
         [HttpPost]
         public ActionResult Edit(City city)
         {
+
+            ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
             try
             {
 
@@ -95,6 +97,7 @@ namespace PartiuAcademia.Web.Controllers
 
             catch (InvalidOperationException ex)
             {
+                ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
                 TempData["msgErro"] = ex.Message;
                 return View(city);
             }
@@ -106,20 +109,20 @@ namespace PartiuAcademia.Web.Controllers
         public ActionResult Delete(string id)
         {
 
-            var state = CityBusiness.GetById(id);
-            return View(state);
+            var city = CityBusiness.GetById(id);
+            return View(city);
         }
 
 
         [HttpPost]
-        public ActionResult Delete(State state)
+        public ActionResult Delete(City city)
         {
             try
             {
 
                 if (ModelState.IsValid)
                 {
-                    CityBusiness.Delete(state.Id);
+                    CityBusiness.Delete(city.Id);
                     TempData["msgErro"] = "Estado Excluido com Sucesso";
 
                     RedirectToAction("Index");
@@ -129,11 +132,11 @@ namespace PartiuAcademia.Web.Controllers
             catch (InvalidOperationException ex)
             {
                 TempData["msgErro"] = ex.Message;
-                return View(state);
+                return View(city);
             }
 
 
-            return View(state);
+            return View(city);
         }
 
 

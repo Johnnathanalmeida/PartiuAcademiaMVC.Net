@@ -14,9 +14,13 @@ namespace PartiuAcademia.Core.Entities
         [Required]
         public string Name { get; set; }
 
-
-
         public virtual City City { get; set; }
+
+
+
+        [Required]
+        [ForeignKey("City")]
+        public virtual string city_Id { get; set; }
 
 
         

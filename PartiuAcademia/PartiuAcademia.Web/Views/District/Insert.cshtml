@@ -1,4 +1,4 @@
-﻿@model PartiuAcademia.Core.Entities.City
+﻿@model PartiuAcademia.Core.Entities.District
 
 @{
     ViewBag.Title = "Insert";
@@ -7,16 +7,16 @@
 <h2>Insert</h2>
 
 
-@using (Html.BeginForm("Insert","City"))
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-        <h4>City</h4>
+        <h4>District</h4>
         <hr />
         @Html.ValidationSummary(true)
 
-        
+       
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
@@ -25,24 +25,23 @@
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
         </div>
+        
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.State.Name ,new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TerminationUser, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(c=>c.state_id ,new SelectList(ViewBag.Estado,"Id","Name"))
-               @*// @Html.ValidationMessageFor(model => model.State)*@
+                @Html.DropDownListFor(model=> model.city_Id, new SelectList(ViewBag.Cidade,"Id","Name"))
+                @Html.ValidationMessageFor(model => model.TerminationUser)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
-
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-
 }
 
 <div>

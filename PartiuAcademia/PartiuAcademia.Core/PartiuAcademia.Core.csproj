@@ -55,12 +55,16 @@
   <ItemGroup>
     <Compile Include="Business\Abstract\IBusiness.cs" />
     <Compile Include="Business\Abstract\ICityBusiness.cs" />
+    <Compile Include="Business\Abstract\IDistrictBusiness.cs" />
     <Compile Include="Business\Abstract\IStateBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
+    <Compile Include="Business\Concrete\AdressBusiness.cs" />
     <Compile Include="Business\Concrete\Business.cs" />
     <Compile Include="Business\Concrete\CityBusiness.cs" />
+    <Compile Include="Business\Concrete\DistrictBusiness.cs" />
     <Compile Include="Business\Concrete\StateBusiness.cs" />
     <Compile Include="Business\Concrete\UserBusiness.cs" />
+    <Compile Include="Business\IAdressBusiness.cs" />
     <Compile Include="DI\PartiuAcademiaNinjectModule.cs" />
     <Compile Include="DTO\AccountViewModels.cs" />
     <Compile Include="DTO\ResultSimpleDTO.cs" />
@@ -82,9 +86,9 @@
     <Compile Include="Entities\TrainingRecord.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Horary.cs" />
-    <Compile Include="Migrations\201503312258431_v3db.cs" />
-    <Compile Include="Migrations\201503312258431_v3db.Designer.cs">
-      <DependentUpon>201503312258431_v3db.cs</DependentUpon>
+    <Compile Include="Migrations\201504011714052_v1db.cs" />
+    <Compile Include="Migrations\201504011714052_v1db.Designer.cs">
+      <DependentUpon>201504011714052_v1db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503312258431_v3db.resx">
-      <DependentUpon>201503312258431_v3db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504011714052_v1db.resx">
+      <DependentUpon>201504011714052_v1db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

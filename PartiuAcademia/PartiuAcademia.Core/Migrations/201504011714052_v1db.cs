@@ -3,7 +3,7 @@ namespace PartiuAcademia.Core.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class v3db : DbMigration
+    public partial class v1db : DbMigration
     {
         public override void Up()
         {
@@ -32,15 +32,15 @@ namespace PartiuAcademia.Core.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false),
+                        city_Id = c.String(nullable: false, maxLength: 128),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
                         TerminationUser = c.String(),
-                        City_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbCity", t => t.City_Id)
-                .Index(t => t.City_Id);
+                .ForeignKey("dbo.tbCity", t => t.city_Id, cascadeDelete: true)
+                .Index(t => t.city_Id);
             
             CreateTable(
                 "dbo.tbCity",
@@ -48,15 +48,15 @@ namespace PartiuAcademia.Core.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false),
+                        state_id = c.String(nullable: false, maxLength: 128),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
                         TerminationUser = c.String(),
-                        State_Id = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbState", t => t.State_Id, cascadeDelete: true)
-                .Index(t => t.State_Id);
+                .ForeignKey("dbo.tbState", t => t.state_id, cascadeDelete: true)
+                .Index(t => t.state_id);
             
             CreateTable(
                 "dbo.tbState",
@@ -312,8 +312,8 @@ namespace PartiuAcademia.Core.Migrations
             DropForeignKey("dbo.tbGym", "Address_Id", "dbo.tbAdress");
             DropForeignKey("dbo.tbExercise", "Category_Id", "dbo.tbCategory");
             DropForeignKey("dbo.tbAdress", "District_Id", "dbo.tbDistrict");
-            DropForeignKey("dbo.tbDistrict", "City_Id", "dbo.tbCity");
-            DropForeignKey("dbo.tbCity", "State_Id", "dbo.tbState");
+            DropForeignKey("dbo.tbDistrict", "city_Id", "dbo.tbCity");
+            DropForeignKey("dbo.tbCity", "state_id", "dbo.tbState");
             DropIndex("dbo.tbTraining", new[] { "Teacher_Id" });
             DropIndex("dbo.tbTeam", new[] { "Teacher_Id" });
             DropIndex("dbo.tbTeam", new[] { "Modality_Id" });
@@ -332,8 +332,8 @@ namespace PartiuAcademia.Core.Migrations
             DropIndex("dbo.tbGym", new[] { "Address_Id" });
             DropIndex("dbo.tbExercise", new[] { "TrainingRecord_Id" });
             DropIndex("dbo.tbExercise", new[] { "Category_Id" });
-            DropIndex("dbo.tbCity", new[] { "State_Id" });
-            DropIndex("dbo.tbDistrict", new[] { "City_Id" });
+            DropIndex("dbo.tbCity", new[] { "state_id" });
+            DropIndex("dbo.tbDistrict", new[] { "city_Id" });
             DropIndex("dbo.tbAdress", new[] { "District_Id" });
             DropTable("dbo.tbTraining");
             DropTable("dbo.tbTeam");
