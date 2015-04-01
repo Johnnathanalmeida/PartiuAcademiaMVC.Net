@@ -35,12 +35,21 @@ namespace PartiuAcademia.Core.Repository.Concrete
         public void Insert(T entity)
         {
             entity.CreationDate = DateTime.Now;
+            entity.TerminationDate = DateTime.Now;
+            entity.CreationUser = "Julio";
+            entity.TerminationUser = "Julio";
+
             Context.Entry(entity).State = EntityState.Added;
             Context.SaveChanges();
         }
 
         public void Update(T entity)
         {
+            entity.CreationDate = DateTime.Now;
+            entity.TerminationDate = DateTime.Now;
+            entity.CreationUser = "Julio";
+            entity.TerminationUser = "Julio";
+
             Context.Entry(entity).State = EntityState.Modified;
             Context.SaveChanges();
         }

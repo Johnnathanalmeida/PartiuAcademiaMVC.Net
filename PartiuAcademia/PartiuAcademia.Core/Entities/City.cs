@@ -18,6 +18,7 @@ namespace PartiuAcademia.Core.Entities
         [Required]
         public virtual State State { get; set; }
 
+        
 
       
     }
