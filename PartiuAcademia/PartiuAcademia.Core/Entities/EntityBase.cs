@@ -10,15 +10,20 @@ namespace PartiuAcademia.Core.Entities
 
         public EntityBase()
         {
-            Id = System.Guid.NewGuid().ToString("n");
+
+            Id = System.Guid.NewGuid().ToString();
         }
 
+        //[Required]
         public DateTime CreationDate { get; set; }
 
+       // [Required]
         public string CreationUser { get; set; }
-                
+
+       // [Required]
         public DateTime TerminationDate { get; set; }
 
+       // [Required]
         public string TerminationUser { get; set; }
 
     }

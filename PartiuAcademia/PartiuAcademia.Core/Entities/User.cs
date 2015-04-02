@@ -33,13 +33,18 @@ namespace PartiuAcademia.Core.Entities
 
         public string CellPhone { get; set; }
 
-        public Address Address { get; set; }
+        public virtual Address Address { get; set; }
         
-        public Address AddressID { get; set; }
+        [ForeignKey("Address")]
+        [Required]
+        public virtual string  AddressID { get; set; }
         
-        public Role Role { get; set; }
 
-        public Role RoleID { get; set; }
+        public virtual Role Role { get; set; }
+
+        [ForeignKey("Role")]
+        [Required]
+        public virtual string RoleID { get; set; }
 
         public  virtual IList<GymUserModality> lGymUserModality { get; set; }
                 

@@ -161,9 +161,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SocialController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,9 +175,6 @@
     <Compile Include="InfraStructure\DependencyResolver\NinjectDependencyResolver.cs" />
     <Compile Include="InfraStructure\FilterProvider\FilterProviderCustom.cs" />
     <Compile Include="InfraStructure\Filters\AutorizacaoAttribute.cs" />
-    <Compile Include="InfraStructure\Helpers\Enum\TextBoxType.cs" />
-    <Compile Include="InfraStructure\Helpers\PartiuAcademiaHelperFactory.cs" />
-    <Compile Include="InfraStructure\Helpers\PartiuAcademiaHelpers.cs" />
     <Compile Include="InfraStructure\Provider\Abstract\IAutenticacaoProvider.cs" />
     <Compile Include="InfraStructure\Provider\Concrete\AutenticacaoProvider.cs" />
     <Compile Include="InfraStructure\Utils\Serializador.cs" />
@@ -660,9 +661,22 @@
     <Content Include="Views\System\Index.cshtml" />
     <Content Include="Views\Home\Modality.cshtml" />
     <Content Include="Views\Home\Promotion.cshtml" />
+    <Content Include="Views\State\Index.cshtml" />
+    <Content Include="Views\State\Insert.cshtml" />
+    <Content Include="Views\State\Edit.cshtml" />
+    <Content Include="Views\State\Delete.cshtml" />
+    <Content Include="Views\City\Insert.cshtml" />
+    <Content Include="Views\City\Index.cshtml" />
+    <Content Include="Views\City\Edit.cshtml" />
+    <Content Include="Views\City\Delete.cshtml" />
+    <Content Include="Views\District\Index.cshtml" />
+    <Content Include="Views\District\Insert.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Inserir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="InfraStructure\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

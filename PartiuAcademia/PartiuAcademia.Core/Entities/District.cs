@@ -11,12 +11,16 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbDistrict")]
     public class District : EntityBase
     {
-        [Required]
-        public string Name { get; set; }
+    //    [Required]
+    //    public string Name { get; set; }
+
+    //    public virtual City City { get; set; }
 
 
 
-        public virtual City City { get; set; }
+    //    [Required]
+    //    [ForeignKey("City")]
+    //    public virtual string city_Id { get; set; }
 
 
         

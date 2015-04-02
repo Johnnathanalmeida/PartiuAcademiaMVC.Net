@@ -12,12 +12,23 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbCity")]
     public class City : EntityBase
     {
-        [Required]
-        public string Name { get; set; }
+        //[Required]
+        //public string Name { get; set; }
 
-        [Required]
-        public virtual State State { get; set; }
+        //public virtual ICollection<Gym> Gyms { get; set; } 
 
+        //public virtual ICollection<User> Users { get; set; } 
+             
+      
+        ////public virtual State State { get; set; }
+
+
+       //[Required]
+       //[ForeignKey("State")]
+       //public virtual string state_id { get; set; }
+             
+
+        
 
       
     }
