@@ -11,7 +11,7 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbGym")]
     public class Gym : EntityBase
     {
-        public virtual Address Address { get; set; }
+        //public virtual Address Address { get; set; }
 
 
       

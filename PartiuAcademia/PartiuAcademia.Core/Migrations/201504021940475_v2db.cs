@@ -3,68 +3,16 @@ namespace PartiuAcademia.Core.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class v1db : DbMigration
+    public partial class v2db : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.tbAdress",
+                "dbo.tbCategory",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Patio = c.String(),
-                        Number = c.String(),
-                        CEP = c.String(),
-                        Complement = c.String(),
-                        CreationDate = c.DateTime(nullable: false),
-                        CreationUser = c.String(),
-                        TerminationDate = c.DateTime(nullable: false),
-                        TerminationUser = c.String(),
-                        District_Id = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbDistrict", t => t.District_Id)
-                .Index(t => t.District_Id);
-            
-            CreateTable(
-                "dbo.tbDistrict",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false),
-                        city_Id = c.String(nullable: false, maxLength: 128),
-                        CreationDate = c.DateTime(nullable: false),
-                        CreationUser = c.String(),
-                        TerminationDate = c.DateTime(nullable: false),
-                        TerminationUser = c.String(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbCity", t => t.city_Id, cascadeDelete: true)
-                .Index(t => t.city_Id);
-            
-            CreateTable(
-                "dbo.tbCity",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false),
-                        state_id = c.String(nullable: false, maxLength: 128),
-                        CreationDate = c.DateTime(nullable: false),
-                        CreationUser = c.String(),
-                        TerminationDate = c.DateTime(nullable: false),
-                        TerminationUser = c.String(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbState", t => t.state_id, cascadeDelete: true)
-                .Index(t => t.state_id);
-            
-            CreateTable(
-                "dbo.tbState",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false),
-                        Sigla = c.String(nullable: false),
+                        Name = c.String(),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
@@ -73,11 +21,22 @@ namespace PartiuAcademia.Core.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.tbCategory",
+                "dbo.tbCity",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(),
+                        CreationDate = c.DateTime(nullable: false),
+                        CreationUser = c.String(),
+                        TerminationDate = c.DateTime(nullable: false),
+                        TerminationUser = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.tbDistrict",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
@@ -128,11 +87,8 @@ namespace PartiuAcademia.Core.Migrations
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
                         TerminationUser = c.String(),
-                        Address_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbAdress", t => t.Address_Id)
-                .Index(t => t.Address_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.tbModality",
@@ -199,27 +155,40 @@ namespace PartiuAcademia.Core.Migrations
                         Password = c.String(),
                         Telephone = c.String(),
                         CellPhone = c.String(),
+                        AddressID = c.String(nullable: false, maxLength: 128),
+                        RoleID = c.String(nullable: false, maxLength: 128),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
                         TerminationUser = c.String(),
-                        Address_Id = c.String(maxLength: 128),
-                        AddressID_Id = c.String(maxLength: 128),
-                        Role_Id = c.String(maxLength: 128),
-                        RoleID_Id = c.String(maxLength: 128),
                         Team_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.tbAdress", t => t.Address_Id)
-                .ForeignKey("dbo.tbAdress", t => t.AddressID_Id)
-                .ForeignKey("dbo.tbRole", t => t.Role_Id)
-                .ForeignKey("dbo.tbRole", t => t.RoleID_Id)
+                .ForeignKey("dbo.tbAdress", t => t.AddressID, cascadeDelete: true)
+                .ForeignKey("dbo.tbRole", t => t.RoleID, cascadeDelete: true)
                 .ForeignKey("dbo.tbTeam", t => t.Team_Id)
-                .Index(t => t.Address_Id)
-                .Index(t => t.AddressID_Id)
-                .Index(t => t.Role_Id)
-                .Index(t => t.RoleID_Id)
+                .Index(t => t.AddressID)
+                .Index(t => t.RoleID)
                 .Index(t => t.Team_Id);
+            
+            CreateTable(
+                "dbo.tbAdress",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        CEP = c.String(),
+                        Patio = c.String(),
+                        Bairro = c.String(),
+                        Cidade = c.String(),
+                        Estado = c.String(),
+                        Number = c.String(),
+                        Complement = c.String(),
+                        CreationDate = c.DateTime(nullable: false),
+                        CreationUser = c.String(),
+                        TerminationDate = c.DateTime(nullable: false),
+                        TerminationUser = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.tbRole",
@@ -242,6 +211,20 @@ namespace PartiuAcademia.Core.Migrations
                         FirstHour = c.Time(nullable: false, precision: 7),
                         FinalHour = c.Time(nullable: false, precision: 7),
                         DayOfWeek = c.Int(nullable: false),
+                        CreationDate = c.DateTime(nullable: false),
+                        CreationUser = c.String(),
+                        TerminationDate = c.DateTime(nullable: false),
+                        TerminationUser = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.tbState",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false),
+                        Sigla = c.String(nullable: false),
                         CreationDate = c.DateTime(nullable: false),
                         CreationUser = c.String(),
                         TerminationDate = c.DateTime(nullable: false),
@@ -299,46 +282,36 @@ namespace PartiuAcademia.Core.Migrations
             DropForeignKey("dbo.tbTeam", "Modality_Id", "dbo.tbModality");
             DropForeignKey("dbo.tbUser", "Team_Id", "dbo.tbTeam");
             DropForeignKey("dbo.tbTeam", "Horary_Id", "dbo.tbHorary");
-            DropForeignKey("dbo.tbUser", "RoleID_Id", "dbo.tbRole");
-            DropForeignKey("dbo.tbUser", "Role_Id", "dbo.tbRole");
+            DropForeignKey("dbo.tbUser", "RoleID", "dbo.tbRole");
             DropForeignKey("dbo.tbGymUserModality", "User_Id", "dbo.tbUser");
-            DropForeignKey("dbo.tbUser", "AddressID_Id", "dbo.tbAdress");
-            DropForeignKey("dbo.tbUser", "Address_Id", "dbo.tbAdress");
+            DropForeignKey("dbo.tbUser", "AddressID", "dbo.tbAdress");
             DropForeignKey("dbo.tbTrainingRecord", "GymUserModality_Id", "dbo.tbGymUserModality");
             DropForeignKey("dbo.tbExercise", "TrainingRecord_Id", "dbo.tbTrainingRecord");
             DropForeignKey("dbo.tbGymUserModality", "Modality_Id", "dbo.tbModality");
             DropForeignKey("dbo.tbGymUserModality", "Gym_Id", "dbo.tbGym");
             DropForeignKey("dbo.tbModality", "Gym_Id", "dbo.tbGym");
-            DropForeignKey("dbo.tbGym", "Address_Id", "dbo.tbAdress");
             DropForeignKey("dbo.tbExercise", "Category_Id", "dbo.tbCategory");
-            DropForeignKey("dbo.tbAdress", "District_Id", "dbo.tbDistrict");
-            DropForeignKey("dbo.tbDistrict", "city_Id", "dbo.tbCity");
-            DropForeignKey("dbo.tbCity", "state_id", "dbo.tbState");
             DropIndex("dbo.tbTraining", new[] { "Teacher_Id" });
             DropIndex("dbo.tbTeam", new[] { "Teacher_Id" });
             DropIndex("dbo.tbTeam", new[] { "Modality_Id" });
             DropIndex("dbo.tbTeam", new[] { "Horary_Id" });
             DropIndex("dbo.tbUser", new[] { "Team_Id" });
-            DropIndex("dbo.tbUser", new[] { "RoleID_Id" });
-            DropIndex("dbo.tbUser", new[] { "Role_Id" });
-            DropIndex("dbo.tbUser", new[] { "AddressID_Id" });
-            DropIndex("dbo.tbUser", new[] { "Address_Id" });
+            DropIndex("dbo.tbUser", new[] { "RoleID" });
+            DropIndex("dbo.tbUser", new[] { "AddressID" });
             DropIndex("dbo.tbTrainingRecord", new[] { "Training_Id" });
             DropIndex("dbo.tbTrainingRecord", new[] { "GymUserModality_Id" });
             DropIndex("dbo.tbGymUserModality", new[] { "User_Id" });
             DropIndex("dbo.tbGymUserModality", new[] { "Modality_Id" });
             DropIndex("dbo.tbGymUserModality", new[] { "Gym_Id" });
             DropIndex("dbo.tbModality", new[] { "Gym_Id" });
-            DropIndex("dbo.tbGym", new[] { "Address_Id" });
             DropIndex("dbo.tbExercise", new[] { "TrainingRecord_Id" });
             DropIndex("dbo.tbExercise", new[] { "Category_Id" });
-            DropIndex("dbo.tbCity", new[] { "state_id" });
-            DropIndex("dbo.tbDistrict", new[] { "city_Id" });
-            DropIndex("dbo.tbAdress", new[] { "District_Id" });
             DropTable("dbo.tbTraining");
             DropTable("dbo.tbTeam");
+            DropTable("dbo.tbState");
             DropTable("dbo.tbHorary");
             DropTable("dbo.tbRole");
+            DropTable("dbo.tbAdress");
             DropTable("dbo.tbUser");
             DropTable("dbo.tbTrainingRecord");
             DropTable("dbo.tbGymUserModality");
@@ -346,11 +319,9 @@ namespace PartiuAcademia.Core.Migrations
             DropTable("dbo.tbGym");
             DropTable("dbo.tbFrequency");
             DropTable("dbo.tbExercise");
-            DropTable("dbo.tbCategory");
-            DropTable("dbo.tbState");
-            DropTable("dbo.tbCity");
             DropTable("dbo.tbDistrict");
-            DropTable("dbo.tbAdress");
+            DropTable("dbo.tbCity");
+            DropTable("dbo.tbCategory");
         }
     }
 }

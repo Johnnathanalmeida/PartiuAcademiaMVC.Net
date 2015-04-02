@@ -16,66 +16,66 @@ namespace PartiuAcademia.Web.Controllers
 
 
 
-        private readonly IDistrictBusiness DistrictBusiness;
+        //private readonly IDistrictBusiness DistrictBusiness;
 
-        private readonly PartiuAcademiaContext PartiuAcademiaContext;
-
-
-
-        public DistrictController(PartiuAcademiaContext partiuAcademia,IDistrictBusiness district)
-        {
-
-            DistrictBusiness = district;
-            PartiuAcademiaContext = partiuAcademia;
-        }
+        //private readonly PartiuAcademiaContext PartiuAcademiaContext;
 
 
 
-        public ActionResult Index()
-        {
-            var Ldistrict = PartiuAcademiaContext.District.Include("City").ToList();
+        //public DistrictController(PartiuAcademiaContext partiuAcademia,IDistrictBusiness district)
+        //{
+
+        //    DistrictBusiness = district;
+        //    PartiuAcademiaContext = partiuAcademia;
+        //}
 
 
-            return View(Ldistrict);
-        }
+
+        //public ActionResult Index()
+        //{
+        //    var Ldistrict = PartiuAcademiaContext.District.Include("City").ToList();
+
+
+        //    return View(Ldistrict);
+        //}
 
 
 
-        public ActionResult Insert()
-        {
+        //public ActionResult Insert()
+        //{
 
-            ViewBag.Cidade = PartiuAcademiaContext.City.OrderBy(c => c.Name);
-            ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
-            return View();
-        }
-
-
-        [HttpPost]
-        public ActionResult Insert(District district)
-        {
-            try
-            {
-
-                if (ModelState.IsValid)
-                {
-                    DistrictBusiness.Insert(district);
-
-                    return RedirectToAction("Index");
-
-                    TempData["msgErro"] = "Stado inserido com sucesso";
-
-                }
-            }
-
-            catch (InvalidOperationException ex)
-            {
-                ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
-                TempData["msgErro"] = ex.Message;
-                return View(district);
-            }
+        //    ViewBag.Cidade = PartiuAcademiaContext.City.OrderBy(c => c.Name);
+        //    ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
+        //    return View();
+        //}
 
 
-            return View(district);
-        }
+        //[HttpPost]
+        //public ActionResult Insert(District district)
+        //{
+        //    try
+        //    {
+
+        //        if (ModelState.IsValid)
+        //        {
+        //            DistrictBusiness.Insert(district);
+
+        //            return RedirectToAction("Index");
+
+        //            TempData["msgErro"] = "Stado inserido com sucesso";
+
+        //        }
+        //    }
+
+        //    catch (InvalidOperationException ex)
+        //    {
+        //        ViewBag.Estado = PartiuAcademiaContext.State.OrderBy(c => c.Name);
+        //        TempData["msgErro"] = ex.Message;
+        //        return View(district);
+        //    }
+
+
+        //    return View(district);
+        //}
 	}
 }

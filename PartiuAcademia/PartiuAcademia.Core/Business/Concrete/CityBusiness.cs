@@ -11,27 +11,28 @@ namespace PartiuAcademia.Core.Business.Concrete
     public class CityBusiness : Business<City>, ICityBusiness
     {
 
-        public override void Insert(City entidade)
-        {
-            if (Query.Any(c => c.Name == entidade.Name))
-            {
-                throw new InvalidOperationException("Cidade já cadastrado no banco");
-            }
+        //    public override void Insert(City entidade)
+        //    {
+        //        if (Query.Any(c => c.Name == entidade.Name))
+        //        {
+        //            throw new InvalidOperationException("Cidade já cadastrado no banco");
+        //        }
 
-            base.Insert(entidade);
-        }
+        //        base.Insert(entidade);
+        //    }
 
 
-        public override void Update(City entidade)
-        {
-            if (Query.Any(s => s.Name == entidade.Name && !s.Id.Equals(entidade.Id)))
-            {
-                throw new InvalidOperationException("Não foi possivél alterar dados, dados já cadastrados no banco");
-            }
+        //    public override void Update(City entidade)
+        //    {
+        //        if (Query.Any(s => s.Name == entidade.Name && !s.Id.Equals(entidade.Id)))
+        //        {
+        //            throw new InvalidOperationException("Não foi possivél alterar dados, dados já cadastrados no banco");
+        //        }
 
-            base.Update(entidade);
-        }
+        //        base.Update(entidade);
+        //    }
 
-       
+
+        //}
     }
 }

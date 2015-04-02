@@ -26,7 +26,7 @@ namespace PartiuAcademia.Web.Controllers
 
         public ActionResult Index()
         {
-            var Lcity = PartiuAcademiaContext.City.Include("State").ToList();
+            var Lcity = PartiuAcademiaContext.City;
             
             
             return View(Lcity);

@@ -7,7 +7,7 @@ using PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Core.Business.Concrete
 {
-    class AdressBusiness : Business<Address>, IAdressBusiness
-    {
-    }
+    //class AdressBusiness : Business<Address>, IAdressBusiness
+    //{
+    //}
 }

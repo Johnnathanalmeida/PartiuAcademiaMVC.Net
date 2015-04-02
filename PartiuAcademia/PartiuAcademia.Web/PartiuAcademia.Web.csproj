@@ -167,6 +167,7 @@
     <Compile Include="Controllers\SocialController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -670,6 +671,8 @@
     <Content Include="Views\City\Delete.cshtml" />
     <Content Include="Views\District\Index.cshtml" />
     <Content Include="Views\District\Insert.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Inserir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,7 +8,7 @@ using  PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Core.Business
 {
-     public interface IAdressBusiness : IBusiness<Address>
-     {
-    }
+    // public interface IAdressBusiness : IBusiness<Address>
+    // {
+    //}
 }

@@ -86,9 +86,13 @@
     <Compile Include="Entities\TrainingRecord.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Horary.cs" />
-    <Compile Include="Migrations\201504011714052_v1db.cs" />
-    <Compile Include="Migrations\201504011714052_v1db.Designer.cs">
-      <DependentUpon>201504011714052_v1db.cs</DependentUpon>
+    <Compile Include="Migrations\201504021940475_v2db.cs" />
+    <Compile Include="Migrations\201504021940475_v2db.Designer.cs">
+      <DependentUpon>201504021940475_v2db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504021944340_v3db.cs" />
+    <Compile Include="Migrations\201504021944340_v3db.Designer.cs">
+      <DependentUpon>201504021944340_v3db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,8 +105,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504011714052_v1db.resx">
-      <DependentUpon>201504011714052_v1db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504021940475_v2db.resx">
+      <DependentUpon>201504021940475_v2db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504021944340_v3db.resx">
+      <DependentUpon>201504021944340_v3db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

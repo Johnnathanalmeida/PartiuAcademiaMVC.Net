@@ -28,7 +28,7 @@ namespace PartiuAcademia.Core.DI
 
 
             Kernel.Bind(typeof (IRepository<>)).To(typeof (BaseRepository<>));
-            Kernel.Bind<IDistrictBusiness>().To<DistrictBusiness>();
+           // Kernel.Bind<IDistrictBusiness>().To<DistrictBusiness>();
             //Kernel.Bind(typeof(IBusiness<>)).To(typeof(Business<>));
         }
 
