@@ -175,6 +175,9 @@
     <Compile Include="InfraStructure\DependencyResolver\NinjectDependencyResolver.cs" />
     <Compile Include="InfraStructure\FilterProvider\FilterProviderCustom.cs" />
     <Compile Include="InfraStructure\Filters\AutorizacaoAttribute.cs" />
+    <Compile Include="InfraStructure\Helpers\PartiuAcademiaHelperFactory.cs" />
+    <Compile Include="InfraStructure\Helpers\PartiuAcademiaHelpers.cs" />
+    <Compile Include="InfraStructure\Helpers\Enumerator\TextBoxType.cs" />
     <Compile Include="InfraStructure\Provider\Abstract\IAutenticacaoProvider.cs" />
     <Compile Include="InfraStructure\Provider\Concrete\AutenticacaoProvider.cs" />
     <Compile Include="InfraStructure\Utils\Serializador.cs" />
@@ -676,7 +679,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="InfraStructure\Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
