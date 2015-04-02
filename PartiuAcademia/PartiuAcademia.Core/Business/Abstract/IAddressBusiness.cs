@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using PartiuAcademia.Core.Entities;
 
-namespace PartiuAcademia.Core.Business.Concrete
+namespace PartiuAcademia.Core.Business.Abstract
 {
-    //class AdressBusiness : Business<Address>, IAdressBusiness
-    //{
-    //}
+    public interface IAddressBusiness : IBusiness<Address>
+    {
+    }
 }

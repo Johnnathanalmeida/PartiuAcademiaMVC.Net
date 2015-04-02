@@ -24,10 +24,7 @@ namespace PartiuAcademia.Core.Entities
 
         public virtual Address Address { get; set; }
         
-        [ForeignKey("Address")]
-        [Required]
         public virtual string  AddressID { get; set; }
-        
 
         public virtual Role Role { get; set; }
 

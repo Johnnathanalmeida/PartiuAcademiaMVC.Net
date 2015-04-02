@@ -12,7 +12,7 @@ namespace PartiuAcademia.Core.Repository.Configuration
     {
         public PartiuAcademiaContext() : base("PartiuAcademiaConnectionString") { }
 
-      //  public DbSet<Address> Address { get; set; }
+        public DbSet<Address> Address { get; set; }
 
         public DbSet<Category> Category { get; set; }
 

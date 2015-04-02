@@ -53,18 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Abstract\IAddressBusiness.cs" />
     <Compile Include="Business\Abstract\IBusiness.cs" />
     <Compile Include="Business\Abstract\ICityBusiness.cs" />
     <Compile Include="Business\Abstract\IDistrictBusiness.cs" />
     <Compile Include="Business\Abstract\IStateBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
-    <Compile Include="Business\Concrete\AdressBusiness.cs" />
+    <Compile Include="Business\Concrete\AddressBusiness.cs" />
     <Compile Include="Business\Concrete\Business.cs" />
     <Compile Include="Business\Concrete\CityBusiness.cs" />
     <Compile Include="Business\Concrete\DistrictBusiness.cs" />
     <Compile Include="Business\Concrete\StateBusiness.cs" />
     <Compile Include="Business\Concrete\UserBusiness.cs" />
-    <Compile Include="Business\IAdressBusiness.cs" />
     <Compile Include="DI\PartiuAcademiaNinjectModule.cs" />
     <Compile Include="DTO\AccountViewModels.cs" />
     <Compile Include="DTO\ResultSimpleDTO.cs" />
@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201504021944340_v3db.Designer.cs">
       <DependentUpon>201504021944340_v3db.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504021957031_v3db1.cs" />
+    <Compile Include="Migrations\201504021957031_v3db1.Designer.cs">
+      <DependentUpon>201504021957031_v3db1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Abstract\IRepository.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504021944340_v3db.resx">
       <DependentUpon>201504021944340_v3db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504021957031_v3db1.resx">
+      <DependentUpon>201504021957031_v3db1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
