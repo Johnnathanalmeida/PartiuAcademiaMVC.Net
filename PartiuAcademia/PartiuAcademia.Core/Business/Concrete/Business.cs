@@ -17,14 +17,14 @@ namespace PartiuAcademia.Core.Business.Concrete
             get { return Repository.Query; }
         }
 
-        public virtual void Delete(string id)
+        public virtual void Delete(string id, string IdUser)
         {
-            Repository.Delete(id);
+            Repository.Delete(id, IdUser);
         }
 
-        public virtual void Insert(T entidade)
+        public virtual void Insert(T entidade, string IdUser)
         {
-            Repository.Insert(entidade);
+            Repository.Insert(entidade, IdUser);
         }
 
         public virtual void Update(T entidade)

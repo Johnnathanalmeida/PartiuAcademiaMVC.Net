@@ -42,14 +42,12 @@ namespace PartiuAcademia.Web.InfraStructure.Provider.Concrete
         private void GerarTicketEArmazenarComoCookie(Core.DTO.LoginViewModel model, int expiracaoEmMinutos = 180)
         {
             var ticketEncriptado = setTicketEncrypted(model, expiracaoEmMinutos);
-
+            
             var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, ticketEncriptado);
 
             authCookie.Expires = DateTime.Now.AddMinutes(expiracaoEmMinutos);
 
             HttpContext.Current.Response.Cookies.Add(authCookie);
-
-
         }
 
         public void Logout()

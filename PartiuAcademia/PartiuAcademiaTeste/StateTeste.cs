@@ -18,9 +18,6 @@ namespace PartiuAcademiaTeste
 
             var userBusiness = Kernel.Get<IBusiness<State>>();
 
-          
-
-
                     var state = new State
                     {
                         TerminationDate = DateTime.Now,
@@ -32,7 +29,7 @@ namespace PartiuAcademiaTeste
                     };
 
 
-                    userBusiness.Insert(state);
+                    userBusiness.Insert(state, "");
 
                     var statePersistido = userBusiness.GetById(state.Id);
 

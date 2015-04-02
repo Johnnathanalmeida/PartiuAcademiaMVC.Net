@@ -11,9 +11,9 @@ namespace PartiuAcademia.Core.Repository.Abstract
     {
         IQueryable<T> Query { get; }
 
-        void Delete(string id);
+        void Delete(string id, string IdUser);
 
-        void Insert(T entity);
+        void Insert(T entity, string IdUser);
 
         void Update(T entity);
 

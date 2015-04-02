@@ -11,9 +11,9 @@ namespace PartiuAcademia.Core.Business.Abstract
     {
         IQueryable<T> Query { get; }
 
-        void Delete(string id);
+        void Delete(string id, string IdUser);
 
-        void Insert(T entidade);
+        void Insert(T entidade, string IdUser);
 
         void Update(T entidade);
 

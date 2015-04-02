@@ -11,6 +11,8 @@ using Microsoft.Owin.Security;
 using Ninject;
 using PartiuAcademia.Web.InfraStructure.Provider.Abstract;
 using PartiuAcademia.Core.DTO;
+using PartiuAcademia.Core.Business.Abstract;
+using PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Web.Controllers
 {
@@ -20,6 +22,9 @@ namespace PartiuAcademia.Web.Controllers
 
         [Inject]
         public IAutenticacaoProvider AuthenticationProvider { get; set; }
+
+        [Inject]
+        public IBusiness<User> BusinessUser { get; set; }
             
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -39,6 +44,7 @@ namespace PartiuAcademia.Web.Controllers
                 var msgErr = string.Empty;
                 if (!AuthenticationProvider.Login(model, out msgErr))
                 {
+
                     TempData["MsgErr"] = msgErr;
                     return View(model);
                 }
@@ -56,10 +62,13 @@ namespace PartiuAcademia.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterViewModel model)
+        public ActionResult Register(User model)
         {
             if (ModelState.IsValid)
             {
+
+                BusinessUser.Insert(model, HttpContext.User.Identity.Name.ToString());
+
                 //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 //var result = await UserManager.CreateAsync(user, model.Password);
                 //if (result.Succeeded)
