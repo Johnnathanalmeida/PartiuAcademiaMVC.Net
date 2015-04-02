@@ -12,6 +12,8 @@ namespace PartiuAcademia.Core.Entities
         {
 
             Id = System.Guid.NewGuid().ToString();
+            CreationDate = DateTime.Now;
+            TerminationDate = DateTime.Now;
         }
 
         //[Required]
