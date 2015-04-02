@@ -51,7 +51,7 @@ namespace PartiuAcademia.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    CityBusiness.Insert(city);
+                    CityBusiness.Insert(city, "");
 
                     return RedirectToAction("Index");
 
@@ -122,7 +122,7 @@ namespace PartiuAcademia.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    CityBusiness.Delete(city.Id);
+                    CityBusiness.Delete(city.Id, "");
                     TempData["msgErro"] = "Estado Excluido com Sucesso";
 
                     RedirectToAction("Index");

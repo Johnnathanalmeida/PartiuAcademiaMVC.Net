@@ -40,7 +40,7 @@ namespace PartiuAcademia.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    StateBusiness.Insert(state);
+                    StateBusiness.Insert(state, "");
 
                     TempData["msgErro"] = "Stado inserido com sucesso";
 
@@ -106,7 +106,7 @@ namespace PartiuAcademia.Web.Controllers
             try
             {
 
-                    StateBusiness.Delete(state.Id);
+                    StateBusiness.Delete(state.Id, "");
                     TempData["msgErro"] = "Estado Excluido com Sucesso";
 
                    return  RedirectToAction("Index");

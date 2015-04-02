@@ -25,14 +25,14 @@ namespace PartiuAcademia.Core.Repository.Concrete
            }            
         }        
         
-        public void Delete(string Id)
+        public void Delete(string Id, string IdUser)
         {
             var entity = Query.First(c => c.Id == Id);
             Context.Entry(entity).State = EntityState.Deleted;
             Context.SaveChanges();
         }
 
-        public void Insert(T entity)
+        public void Insert(T entity, string IdUser)
         {
             entity.CreationDate = DateTime.Now;
             entity.TerminationDate = DateTime.Now;

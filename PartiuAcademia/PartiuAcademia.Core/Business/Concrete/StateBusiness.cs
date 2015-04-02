@@ -10,14 +10,14 @@ namespace PartiuAcademia.Core.Business.Concrete
 {
     public class StateBusiness : Business<State>, IStateBusiness
     {
-        public override void Insert(State entidade)
+        public override void Insert(State entidade, string IdUser)
         {
             if (Query.Any(s => s.Name == entidade.Name))
             {
                 throw new InvalidOperationException("Estado já cadastrado no banco");
             }
 
-            base.Insert(entidade);
+            base.Insert(entidade, IdUser);
         }
 
 

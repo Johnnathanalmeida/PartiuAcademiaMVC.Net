@@ -52,7 +52,7 @@ namespace PartiuAcademia.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    userBusiness.Insert(user);
+                    userBusiness.Insert(user, "");
 
                     return RedirectToAction("Index");
 
