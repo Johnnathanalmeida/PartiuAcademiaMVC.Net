@@ -1,37 +1,139 @@
-﻿@model PartiuAcademia.Core.DTO.RegisterViewModel
+﻿@using System.Web.UI.WebControls
+@using PartiuAcademia.Web.InfraStructure.Helpers.Enum
+@model PartiuAcademia.Core.Entities.User
 @{
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <div class="col-md-12 align-center">
+        <h1>Crie sua conta</h1>
+    </div>
+</div>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<div class="row">
+    <div class="col-md-6 hidden-sm hidden-xs align-center">
+        <h2>Você só precisa de uma conta</h2>
+        <p>Um único nome de usuário e senha dá acesso a tudo o que a i3J oferece.</p>
+        <p>- One Fitness</p>
+        <p>- One Control</p>
+        <br />
+        <h2>Leve tudo com você</h2>
+        <p>Troque de dispositivo e continue de onde parou.</p>
+    </div>
+    <div class="col-md-6">
+@using (Ajax.BeginForm("Register", "Account", new AjaxOptions()
+{
+    HttpMethod = "Post",
+    LoadingElementId = "divLoading",
+    InsertionMode = InsertionMode.Replace,
+    OnSuccess = "onSucessoEmpresa"
+}))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <fieldset>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            @Html.Academia().TextBox("Name", "Nome", TextBoxType.Texto)
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-5 align-left">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            @Html.Academia().TextBox("LastName", "Sobrenome", TextBoxType.Texto)
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+
+        <div class="row">
+            <div class="col-md-10 align-left">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            @Html.Academia().TextBox("Email", "E-mail", TextBoxType.Texto)
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            @Html.Academia().TextBox("Password", "Senha", TextBoxType.Senha)
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            @Html.Academia().TextBox("ConfirmPassword", "Repita a Senha", TextBoxType.Senha)
+                        </span>
+                    </label>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="block clearfix">
+                        <span class="block input-group">
+                            <input type="text" placeholder="Dia" value="" />
+                            <select class="form-control">
+                                <option>Mês</option>
+                                <option>Janeiro</option>
+                                <option>Fevereiro</option>
+                                <option>Março</option>
+                                <option>Abril</option>
+                                <option>Junho</option>
+                                <option>Julho</option>
+                                <option>Agosto</option>
+                                <option>Setembro</option>
+                                <option>Outubro</option>
+                            </select>
+                            <input type="text" placeholder="Ano" value="" />
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label class="block">
+                        <input type="checkbox" class="ace" />
+                        <span class="lbl">Eu aceito os <a href="#">Termos de Uso</a></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default" value="Registrar" />
+                </div>
+            </div>
+        </div>
+</fieldset>
 }
+    </div>
+</div>
+
+
+

@@ -23,18 +23,26 @@ namespace PartiuAcademia.Core.Repository.Concrete
            get {
                return from c in Context.Set<T>() select c;
            }            
-        }        
-        
-        public void Delete(string Id)
+        }
+
+        public void Delete(string Id, string IdUser)
         {
             var entity = Query.First(c => c.Id == Id);
+
+            entity.TerminationDate = DateTime.Now;
+            entity.TerminationUser = IdUser;
+
             Context.Entry(entity).State = EntityState.Deleted;
             Context.SaveChanges();
         }
 
-        public void Insert(T entity)
+        public void Insert(T entity, string IdUser)
         {
             entity.CreationDate = DateTime.Now;
+            entity.CreationUser = IdUser;
+            entity.TerminationDate = DateTime.MaxValue;
+            entity.TerminationUser = string.Empty;
+            
             Context.Entry(entity).State = EntityState.Added;
             Context.SaveChanges();
         }

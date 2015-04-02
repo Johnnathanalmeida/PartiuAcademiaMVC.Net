@@ -8,16 +8,17 @@ namespace PartiuAcademia.Core.Entities
         [Key]
         public string Id { get; set; }
 
-        [Required]
+        public EntityBase()
+        {
+            Id = System.Guid.NewGuid().ToString("n");
+        }
+
         public DateTime CreationDate { get; set; }
 
-        [Required]
         public string CreationUser { get; set; }
-
-        [Required]
+                
         public DateTime TerminationDate { get; set; }
 
-        [Required]
         public string TerminationUser { get; set; }
 
     }
