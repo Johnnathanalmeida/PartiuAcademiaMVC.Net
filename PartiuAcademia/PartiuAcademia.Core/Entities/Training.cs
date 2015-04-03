@@ -21,7 +21,7 @@ namespace PartiuAcademia.Core.Entities
 
         public bool Status { get; set; }
 
-        public virtual IList<TrainingRecord> lTrainingRecord { get; set; }
+        public virtual IQueryable<TrainingRecord> lTrainingRecord { get; set; }
 
     }
 }

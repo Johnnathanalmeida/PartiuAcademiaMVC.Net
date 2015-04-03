@@ -10,7 +10,7 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbTeam")]
     public class Team : EntityBase
     {
-        public  virtual IList<User> lUser { get; set; }
+        public  virtual IQueryable<User> lUser { get; set; }
 
         public virtual User Teacher { get; set; }
 

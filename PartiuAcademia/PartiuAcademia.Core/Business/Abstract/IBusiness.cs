@@ -18,5 +18,7 @@ namespace PartiuAcademia.Core.Business.Abstract
         void Update(T entidade);
 
         T GetById(string id);
+
+        T InsertReturn(T entity, string IdUser);
     }
 }

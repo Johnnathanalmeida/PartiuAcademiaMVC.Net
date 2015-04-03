@@ -11,31 +11,33 @@ namespace PartiuAcademiaTeste
     {
 
 
-        [Test]
-        public void PodeInserirStateTeste()
-        {
+        //[Test]
+        //public void PodeInserirStateTeste()
+        //{
 
 
-            var userBusiness = Kernel.Get<IBusiness<State>>();
+        //    var userBusiness = Kernel.Get<IBusiness<State>>();
 
-                    var state = new State
-                    {
-                        TerminationDate = DateTime.Now,
-                        CreationUser = "Julio",
-                        Id = "12",
-                        Name = "Minas Gerais",
-                        Sigla = "MG",
-                        TerminationUser = "12/54646"
-                    };
+        //            var state = new State
+        //            {
+        //                TerminationDate = DateTime.Now,
+        //                CreationUser = "Julio",
+        //                Id = "12",
+        //                Name = "Minas Gerais",
+        //                Sigla = "MG",
+        //                TerminationUser = "12/54646"
+        //            };
 
 
-                    userBusiness.Insert(state, "");
+        //            userBusiness.Insert(state, "");
 
-                    var statePersistido = userBusiness.GetById(state.Id);
+        //            var statePersistido = userBusiness.GetById(state.Id);
 
-                    Assert.IsNotNull(statePersistido);
+        //            Assert.IsNotNull(statePersistido);
 
-                }
-            }
-        }
+        //        }
+        //    }
+
+    }
+}
    

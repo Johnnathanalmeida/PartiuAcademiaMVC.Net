@@ -11,12 +11,12 @@ namespace PartiuAcademia.Core.Entities
     [Table("tbGym")]
     public class Gym : EntityBase
     {
-        //public virtual Address Address { get; set; }
+       //public virtual Address Address { get; set; }
 
 
-      
+        public virtual IQueryable<Address> LaAddresses { get; set; } 
 
-        public virtual IList<Modality> Modality { get; set; }
+        public virtual IQueryable<Modality> Modality { get; set; }
         
     }
 }

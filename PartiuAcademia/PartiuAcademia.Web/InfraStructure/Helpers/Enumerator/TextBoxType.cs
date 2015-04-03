@@ -7,12 +7,17 @@ namespace PartiuAcademia.Web.InfraStructure.Helpers.Enum
 {
     public enum TextBoxType
     {
-        Texto,
+        Texto ,
         Nome,
         Email,
         Telefone,
         Cep,
         Senha,
-        Data
+        Data,
+
+
+
+
+
     }
 }

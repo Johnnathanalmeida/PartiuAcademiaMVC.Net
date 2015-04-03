@@ -34,14 +34,15 @@ namespace PartiuAcademia.Core.Repository.Concrete
 
         public void Insert(T entity, string IdUser)
         {
-            entity.CreationDate = DateTime.Now;
-            entity.TerminationDate = DateTime.Now;
+           
             entity.CreationUser = "Julio";
             entity.TerminationUser = "Julio";
 
             Context.Entry(entity).State = EntityState.Added;
             Context.SaveChanges();
         }
+
+
 
         public void Update(T entity)
         {
@@ -57,6 +58,20 @@ namespace PartiuAcademia.Core.Repository.Concrete
         public T GetById(string Id)
         {
             return Query.FirstOrDefault(c => c.Id == Id);
+        }
+
+        public T InsertReturn(T entity, string IdUser)
+        {
+            entity.CreationDate = DateTime.Now;
+            entity.TerminationDate = DateTime.Now;
+            entity.CreationUser = "Julio";
+            entity.TerminationUser = "Julio";
+
+            Context.Entry(entity).State = EntityState.Added;
+             Context.SaveChanges();
+
+            return entity;
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PartiuAcademia.Core.Entities
     public class TrainingRecord : EntityBase
     {
 
-        public  virtual IList<Exercise> lExercise { get; set; }
+        public  virtual IQueryable<Exercise> lExercise { get; set; }
         
     }
 }

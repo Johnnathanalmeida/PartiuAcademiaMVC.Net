@@ -161,11 +161,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CityController.cs" />
-    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SocialController.cs" />
-    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -664,16 +661,6 @@
     <Content Include="Views\System\Index.cshtml" />
     <Content Include="Views\Home\Modality.cshtml" />
     <Content Include="Views\Home\Promotion.cshtml" />
-    <Content Include="Views\State\Index.cshtml" />
-    <Content Include="Views\State\Insert.cshtml" />
-    <Content Include="Views\State\Edit.cshtml" />
-    <Content Include="Views\State\Delete.cshtml" />
-    <Content Include="Views\City\Insert.cshtml" />
-    <Content Include="Views\City\Index.cshtml" />
-    <Content Include="Views\City\Edit.cshtml" />
-    <Content Include="Views\City\Delete.cshtml" />
-    <Content Include="Views\District\Index.cshtml" />
-    <Content Include="Views\District\Insert.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Inserir.cshtml" />
   </ItemGroup>

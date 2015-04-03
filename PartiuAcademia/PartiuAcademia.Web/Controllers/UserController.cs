@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Ninject;
 using PartiuAcademia.Core.Business.Abstract;
 using PartiuAcademia.Core.Entities;
 using PartiuAcademia.Core.Repository.Configuration;
@@ -13,14 +14,18 @@ namespace PartiuAcademia.Web.Controllers
     {
 
 
-        private readonly IUserBusiness  userBusiness;
+        [Inject]
+        public IUserBusiness userBusiness { get; set; }
 
-        private readonly PartiuAcademiaContext partiuAcademiaContext ;
+        [Inject]
+        public IAddressBusiness addressBusiness { get; set; }
 
-        public UserController(IUserBusiness userBusinessParam, PartiuAcademiaContext _contextParam)
+        private readonly PartiuAcademiaContext partiuAcademiaContext;
+
+        public UserController(PartiuAcademiaContext _contextParam )
         {
 
-            userBusiness = userBusinessParam;
+            //userBusiness = userBusinessparam;
             partiuAcademiaContext = _contextParam;
         }
 
@@ -52,8 +57,9 @@ namespace PartiuAcademia.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    userBusiness.Insert(user, "");
-
+                    
+                    userBusiness.Insert(user,"");
+                 
                     return RedirectToAction("Index");
 
                     TempData["msgErro"] = "Stado inserido com sucesso";

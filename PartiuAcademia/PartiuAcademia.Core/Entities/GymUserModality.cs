@@ -25,7 +25,7 @@ namespace PartiuAcademia.Core.Entities
 
 
 
-        public  virtual  IList<TrainingRecord> TrainingRecord { get; set; }
+        public  virtual  IQueryable<TrainingRecord> TrainingRecord { get; set; }
         
     }
 }

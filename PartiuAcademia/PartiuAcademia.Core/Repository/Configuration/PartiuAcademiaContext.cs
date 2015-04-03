@@ -16,9 +16,7 @@ namespace PartiuAcademia.Core.Repository.Configuration
 
         public DbSet<Category> Category { get; set; }
 
-        public DbSet<City> City { get; set; }
-
-        public DbSet<District> District { get; set; }
+       
 
         public DbSet<Exercise> Exercise { get; set; }
 
@@ -34,7 +32,7 @@ namespace PartiuAcademia.Core.Repository.Configuration
 
         public DbSet<Role> Role { get; set; }
 
-        public DbSet<State> State { get; set; }
+       
 
         public DbSet<Team> Team { get; set; }
 

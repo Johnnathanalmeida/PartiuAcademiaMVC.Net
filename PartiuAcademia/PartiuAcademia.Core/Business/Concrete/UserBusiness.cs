@@ -13,16 +13,17 @@ namespace PartiuAcademia.Core.Business.Concrete
     public class UserBusiness : Business<User>, IUserBusiness
     {
 
-
-        [Inject]
-        public IAddressBusiness AddressBusiness { get; set; }
-
         public override void Insert(User user, string IdUser)
         {
-            if (Query.Any(u => u.Email == user.Email))
-            {
+
+            if (Query.Any(u => u.Email == user.Email)){
                 throw new InvalidOperationException("Não é possível inserir usuário com o mesmo login.");
                 
+            }
+
+            if (string.IsNullOrEmpty(user.Address.Bairro))
+            {
+                user.Address = null;
             }
 
             base.Insert(user, IdUser);

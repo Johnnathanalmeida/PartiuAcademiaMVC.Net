@@ -35,6 +35,7 @@ namespace PartiuAcademia.Core.Entities
 
         public virtual Address Address { get; set; }
         
+        [ForeignKey("Address")]
         public virtual string  AddressID { get; set; }
 
         public virtual Role Role { get; set; }
@@ -43,7 +44,7 @@ namespace PartiuAcademia.Core.Entities
         [Required]
         public virtual string RoleID { get; set; }
 
-        public  virtual IList<GymUserModality> lGymUserModality { get; set; }
+        public  virtual IQueryable<GymUserModality> lGymUserModality { get; set; }
                 
     }
 }

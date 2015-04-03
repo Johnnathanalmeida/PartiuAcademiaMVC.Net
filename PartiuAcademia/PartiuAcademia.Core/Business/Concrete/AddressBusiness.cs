@@ -8,7 +8,10 @@ using PartiuAcademia.Core.Entities;
 
 namespace PartiuAcademia.Core.Business.Concrete
 {
-    class AddressBusiness : Business<Address>, IAddressBusiness
+    public class AddressBusiness : Business<Address>, IAddressBusiness
     {
+
+       
+
     }
 }

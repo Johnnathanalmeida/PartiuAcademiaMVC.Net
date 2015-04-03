@@ -25,12 +25,7 @@ namespace PartiuAcademia.Web.Controllers
         public IUserBusiness UserBusiness { get; set; }
 
 
-        [Inject]
-        public IStateBusiness StateBusiness { get; set; }
-
-          
-
-
+       
         public ActionResult Index()
         {
             return View();

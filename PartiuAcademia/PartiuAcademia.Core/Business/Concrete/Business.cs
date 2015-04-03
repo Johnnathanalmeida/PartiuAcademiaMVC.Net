@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using System;
+using Ninject;
 using PartiuAcademia.Core.Business.Abstract;
 using PartiuAcademia.Core.Entities;
 using PartiuAcademia.Core.Repository.Abstract;
@@ -36,5 +37,16 @@ namespace PartiuAcademia.Core.Business.Concrete
         {
             return Repository.GetById(id);
         }
+
+
+        public virtual T InsertReturn(T entity, string IdUser)
+        {
+            
+
+           return Repository.InsertReturn(entity, IdUser);
+        }
     }
+
+
 }
+
