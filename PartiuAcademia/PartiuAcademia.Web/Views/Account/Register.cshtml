@@ -5,6 +5,7 @@
     ViewBag.Title = "Register";
 }
 
+
 <div class="row">
     <div class="col-md-12 align-center">
         <h1>Crie sua conta</h1>
@@ -31,28 +32,26 @@
 }))
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <fieldset>
         
         <div class="row">
-            <div class="col-md-5">
-                <div class="form-group">
+            <fieldset>
+                <div class="col-md-5">
                     <label class="block clearfix">
                         <span class="block input-group">
                             @Html.Academia().TextBox("Name", "Nome", TextBoxType.Texto)
                         </span>
                     </label>
                 </div>
-            </div>
-            <div class="col-md-5 align-left">
-                <div class="form-group">
+                <div class="col-md-5 align-left">
                     <label class="block clearfix">
                         <span class="block input-group">
                             @Html.Academia().TextBox("LastName", "Sobrenome", TextBoxType.Texto)
                         </span>
                     </label>
                 </div>
-            </div>
+            </fieldset>
+            @Html.ValidationMessageFor(e => e.Name, String.Empty, new { @class = "text-danger", @style = "padding-left: 12px;" })
+            @Html.ValidationMessageFor(e => e.LastName, String.Empty, new { @class = "text-danger", @style = "padding-left: 12px;" })
         </div>
 
         <div class="row">
@@ -63,6 +62,7 @@
                             @Html.Academia().TextBox("Email", "E-mail", TextBoxType.Texto)
                         </span>
                     </label>
+                    @Html.ValidationMessageFor(e => e.Name, String.Empty, new { @class = "text-danger" })
                 </div>
             </div>
         </div>
@@ -89,30 +89,18 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-10">
-                <div class="form-group">
-                    <label class="block clearfix">
-                        <span class="block input-group">
-                            <input type="text" placeholder="Dia" value="" />
-                            <select class="form-control">
-                                <option>Mês</option>
-                                <option>Janeiro</option>
-                                <option>Fevereiro</option>
-                                <option>Março</option>
-                                <option>Abril</option>
-                                <option>Junho</option>
-                                <option>Julho</option>
-                                <option>Agosto</option>
-                                <option>Setembro</option>
-                                <option>Outubro</option>
-                            </select>
-                            <input type="text" placeholder="Ano" value="" />
-                        </span>
-                    </label>
-                </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="form-group">
+                <label>Data de Nascimento</label><br />
+                <input type="text" class="align-center" style="width: 60px;" placeholder="Dia" value="" />
+                <select class="align-center" style="width: 140px; padding: 3px;">
+                    <option>Mês</option>
+                </select>
+                <input type="text" class="align-center" style="width: 80px;" placeholder="Ano" value="" />
             </div>
         </div>
+    </div>
         <div class="row">
             <div class="col-md-10">
                 <div class="form-group">
@@ -130,7 +118,7 @@
                 </div>
             </div>
         </div>
-</fieldset>
+
 }
     </div>
 </div>
