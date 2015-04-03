@@ -13,7 +13,7 @@ namespace PartiuAcademia.Core.Entities
     {
         public virtual User Teacher { get; set; }
 
-        public  Objetivo Objetivo { get; set; }
+        public  Enumerator Objetivo { get; set; }
         
         public string Observation { get; set; }
 

@@ -34,7 +34,9 @@ namespace PartiuAcademia.Core.Entities
         [Display(Name = "Confirme a senha")]
         public string ConfirmPassword { get; set; }
 
-        public DateTime Birth { get; set; }
+        public DateTime BirthDay { get; set; }
+
+        public int MyProperty { get; set; }
 
         public string Telephone { get; set; }
 

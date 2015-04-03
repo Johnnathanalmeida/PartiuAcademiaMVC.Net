@@ -65,7 +65,7 @@
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\Enum\Objetivo.cs" />
+    <Compile Include="Entities\Enum\Enumerator.cs" />
     <Compile Include="Entities\Exercise.cs" />
     <Compile Include="Entities\Frequency.cs" />
     <Compile Include="Entities\Gym.cs" />
